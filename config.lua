@@ -3,7 +3,6 @@
 --[[ ===================================================== ]]--
 
 Config = {}
-Config.debugPoly = true
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 --
 Config.SendAreaClearMessage = false
