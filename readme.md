@@ -29,6 +29,11 @@
 # MH Loot Areas
 - Loot all kinds of areas where you can find different loot.
 - There is a cooldown after you loot something, it wil reset after a amount of time.
+- It works with target eye.
+
+## Dependencies:
+- [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
+- [qb-target](https://github.com/BerkieBb/qb-target) (Required)
 
 ## How to install.
 - Create a folder inside the folder `resources` named `[mh]`.
