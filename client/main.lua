@@ -7,6 +7,13 @@ local isBizy = false
 local lootedEntities = {}
 local drugsProps = {}
 
+local function Reset()
+    for k, v in pairs(lootedEntities) do
+        v = nil
+    end
+    lootedEntities = {}
+end
+
 local function loadModel(model)
     RequestModel(model)
     while not HasModelLoaded(model) do
@@ -153,4 +160,8 @@ AddEventHandler('onResourceStop', function(resource)
     if resource == GetCurrentResourceName() then
         DeleteAllProps()
     end
+end)
+
+RegisterNetEvent('mh-lootareas:client:reset', function()
+    Reset()
 end)
