@@ -12,6 +12,7 @@ local function ResetAreas()
         netEntities = {}
         if Config.SendAreaClearMessage then
             TriggerClientEvent('QBCore:Notify', -1, Lang:t('info.areas_reset'))
+            TriggerClientEvent('mh-lootareas:client:reset', -1)
         end
         ResetAreas()
     end)
