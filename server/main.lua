@@ -65,7 +65,7 @@ RegisterNetEvent("mh-lootareas:server:loot", function(entity, type, chance)
             for _ = 1, Config.GainStressAmount, 1 do
                 local randItem = Config.Loot[type][math.random(1, #Config.Loot[type])] 
                 Player.Functions.AddItem(randItem, amount)
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[randItem], 'add', amount)
+                TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items[randItem], 'add', amount)
                 Wait(500)
             end
         else
@@ -76,7 +76,7 @@ RegisterNetEvent("mh-lootareas:server:loot", function(entity, type, chance)
                     Player.Functions.AddMoney('cash', Config.MinMaxMoneyWin)
                 else
                     Player.Functions.AddItem(item, amount)
-                    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add', amount)
+                    TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add', amount)
                 end
             else
                 TriggerClientEvent('QBCore:Notify', src, Lang:t('info.not_find_anyting'), "error")
