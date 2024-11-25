@@ -26,6 +26,10 @@
   <img alig src="https://github-profile-trophy.vercel.app/?username=MaDHouSe79&margin-w=15&column=6" />
 </p>
 
+# My Youtube Channel and Discord
+- [Subscribe](https://www.youtube.com/c/@MaDHouSe79) 
+- [Discord](https://discord.gg/vJ9EukCmJQ)
+
 # MH Loot Areas
 - Loot all kinds of areas where you can find different loot.
 - There is a cooldown after you loot something, it wil reset after a amount of time.
@@ -41,6 +45,8 @@
 - Add in server.cfg `ensure [mh]` after `ensure [qb]` 
 - Restart your server.
 
+# 🐞 Any bugs issues or suggestions, let my know. 👊😎
 
-# 🙈 Youtube
-- [Youtube](https://www.youtube.com/c/MaDHouSe79)
+# LICENSE
+[GPL LICENSE](./LICENSE)<br />
+&copy; [MaDHouSe79](https://www.youtube.com/@MaDHouSe79)

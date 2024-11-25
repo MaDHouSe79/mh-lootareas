@@ -1,7 +1,6 @@
 --[[ ===================================================== ]]--
 --[[            MH Loot Areas Script by MaDHouSe           ]]--
 --[[ ===================================================== ]]--
-
 local QBCore = exports['qb-core']:GetCoreObject()
 local isBizy = false
 local lootedEntities = {}
@@ -105,41 +104,6 @@ local function LoadTargetProps()
                         },
                         distance = 1.5 
                     })
-                end
-                if v.type == 'drugs' then
-                    if Config.UseDrugsLoot then
-                        for i = 1, v.amount do
-                            local coords = Config.DrugsAreas[v.loot].coords
-                            local radius = Config.DrugsAreas[v.loot].radius
-                            local x, y, z = GetRandomPosition(coords, radius)
-                            loadModel(v.prop)
-                            local spawn = CreateObject(v.prop, x, y, z, true, true, 0)
-                            drugsProps[#drugsProps + 1] = spawn
-                            SetEntityAsMissionEntity(spawn, true, true)
-                            SetEntityHeading(spawn, 0.0)
-                            FreezeEntityPosition(spawn, true)
-                        end
-                        exports['qb-target']:AddTargetModel(v.hash, {
-                            options = {
-                                {
-                                    type = "client",
-                                    icon = "fas fa-hand",
-                                    label = Lang:t('info.pickup_'..v.loot),
-                                    action = function(entity)
-                                        if IsPedAPlayer(entity) then return false end
-                                        if isBizy then return false end
-                                        LootEntity(entity, v.loot, v.chance)
-                                    end,
-                                    canInteract = function(entity, distance, data)
-                                        if IsPedAPlayer(entity) then return false end
-                                        if isBizy then return false end
-                                        return true
-                                    end
-                                },
-                            },
-                            distance = 1.5 
-                        })
-                    end
                 end
             end
         end

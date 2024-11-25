@@ -3,7 +3,7 @@
 --[[ ===================================================== ]]--
 
 Config = {}
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
+Config.UseTarget = true
 --
 Config.SendAreaClearMessage = false
 --
@@ -25,9 +25,6 @@ Config.Loot = {
     ['normal'] = {'beer', 'whiskey', 'vodka', 'money', 'bandage', 'iphone', 'samsungphone', 'rolex', 'diamond_ring', 'goldchain', 'acetone', 'lithium'},
     ['rare']   = {'security_card_01', 'security_card_02', 'meth', 'coke_brick', 'money'},
     ['scrap']  = {'plastic', 'metalscrap', 'copper', 'aluminum', 'iron', 'steel', 'rubber', 'glass', 'money'},
-    ['weed']   = {'cannabis'},
-    ['meth']   = {'methylamine'},
-    ['coke']   = {'cocaineleaf'},
 }
 
 -- you can add other props if you want (https://gtahash.ru/)
@@ -62,25 +59,4 @@ Config.TargetProps = {
     ['boxwood'] = {
         {hash = 307713837, prop = 'prop_box_wood07a', loot = 'rare', chance = 25, type = "item"},
     },
-
-    -- Drugs harvest
-    ['weed'] = {
-        {hash = 452618762, prop = 'prop_weed_02', loot = 'weed', amount = 15, chance = 100, type = "drugs"},
-    },
-    ['meth'] = {
-        {hash = 1298403575, prop = 'prop_barrel_02a', loot = 'meth', amount = 15, chance = 100, type = "drugs"},
-    },
-    ['coke'] = {
-        {hash = -1719175883, prop = 'prop_plant_fern_02b', loot = 'coke', amount = 15, chance = 100, type = "drugs"},
-    },
-}
-
---[[ Drugs ]]--
-Config.UseDrugsLoot = true
--- change all locations if you want to use this
--- cause it is now on the airport as demo.
-Config.DrugsAreas = { 
-    ['weed'] = {coords = vector3(-1021.5588, -2983.8069, 13.9479), radius = 35},
-    ['meth'] = {coords = vector3(-1088.0430, -2975.3093, 13.9449), radius = 35},
-    ['coke'] = {coords = vector3(-1047.6152, -2918.8555, 13.9526), radius = 35},
 }
