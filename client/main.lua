@@ -84,26 +84,30 @@ local function LoadTargetProps()
         for k, v in pairs(props) do
             if v.loot then
                 if v.type == 'item' then
-                    exports['qb-target']:AddTargetModel(v.hash, {
-                        options = {
-                            {
-                                type = "client",
-                                icon = "fas fa-hand",
-                                label = Lang:t('info.searching'),
-                                action = function(entity)
-                                    if IsPedAPlayer(entity) then return false end
-                                    if isBizy then return false end
-                                    LootEntity(entity, v.loot, v.chance)
-                                end,
-                                canInteract = function(entity, distance, data)
-                                    if IsPedAPlayer(entity) then return false end
-                                    if isBizy then return false end
-                                    return true
-                                end
+                    if Config.Target == "qb-target" then
+                        exports['qb-target']:AddTargetModel(v.hash, {
+                            options = {
+                                {
+                                    type = "client",
+                                    icon = "fas fa-hand",
+                                    label = Lang:t('info.searching'),
+                                    action = function(entity) LootEntity(entity, v.loot, v.chance) end,
+                                    canInteract = function(entity, distance, data)
+                                        if IsPedAPlayer(entity) or isBizy then return false end
+                                        return true
+                                    end
+                                },
                             },
-                        },
-                        distance = 1.5 
-                    })
+                            distance = 1.5 
+                        })
+                    elseif Config.Target == "ox_target" then
+                        exports.ox_target:addModel(v.hash, {
+                            icon = 'fas fa-hand',
+                            label = Lang:t('info.searching'),
+                            onSelect = function(data) return LootEntity(data.entity, v.loot, v.chance) end,
+                            distance = 2
+                        })
+                    end
                 end
             end
         end

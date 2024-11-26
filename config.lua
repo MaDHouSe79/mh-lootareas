@@ -4,6 +4,7 @@
 
 Config = {}
 Config.UseTarget = true
+Config.Target = "ox_target" -- qb-target or ox_target
 --
 Config.SendAreaClearMessage = false
 --
