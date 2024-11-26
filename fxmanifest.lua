@@ -7,7 +7,7 @@ game 'gta5'
 
 author 'MaDHouSe'
 description 'MH Loot Areas'
-version '1.0.1'
+version '1.0.0'
 
 shared_scripts {
     '@qb-core/shared/locale.lua',
